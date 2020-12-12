@@ -14,6 +14,12 @@ module.exports = function (sequelize, DataTypes) {
 
       },
     });
+
+    User.associate = function (models) {
+      Player.belongsToMany(models.User, {
+        through: ""
+      })
+    }
     return User;
   };
   
