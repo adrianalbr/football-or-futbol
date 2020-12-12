@@ -15,7 +15,6 @@ module.exports = function (sequelize, DataTypes) {
     strength: {
       type: DataTypes.INTEGER,
     },
-
     agility: {
       type: DataTypes.INTEGER,
     },
