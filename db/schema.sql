@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS fball_db;
+CREATE DATABASE fball_db;

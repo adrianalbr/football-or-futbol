@@ -23,5 +23,8 @@
     "handlebars": "^4.7.6",
     "router": "^1.3.5",
     "sequelizer": "^1.1.4"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
   }
 }
