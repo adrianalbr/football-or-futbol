@@ -37,7 +37,7 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.use(playerController);
+// app.use(playerController);
 
 // API Routes
 //test route
