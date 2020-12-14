@@ -50,6 +50,10 @@ app.get("/api/config", (req, res) => {
 app.post("/api/test", (req, res) => {
   console.log(req.body);
 });
+// Requiring our routes
+
+require("./controllers/userController.js")(app);
+
 // db.sequelize.sync({ force: true }).then(() => {
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
