@@ -51,7 +51,8 @@ app.post("/api/test", (req, res) => {
   console.log(req.body);
 });
 // Requiring our routes
-
+require("./controllers/headController.js")(app);
+require("./controllers/playerController.js")(app);
 require("./controllers/userController.js")(app);
 
 // db.sequelize.sync({ force: true }).then(() => {
