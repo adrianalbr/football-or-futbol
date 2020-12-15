@@ -1,7 +1,8 @@
 let db = require("../models");
+
 module.exports = function (app) {
-  app.post("/api/players", function (req, res) {
-    db.Player.create(req.body)
+  app.post("/api/users", function (req, res) {
+    db.User.create(req.body)
       .then(function (data) {
         res.json(data);
       })
@@ -10,10 +11,10 @@ module.exports = function (app) {
       });
   });
 
-  app.get("/api/players/:id", function (req, res) {
-    db.Player.findOne({
+  app.get("/api/users/:email", function (req, res) {
+    db.User.findOne({
       where: {
-        id: req.params.id,
+        email: req.params.email,
       },
     })
       .then(function (data) {
@@ -24,20 +25,10 @@ module.exports = function (app) {
       });
   });
 
-  app.get("/api/players", function (req, res) {
-    db.Player.findAll()
-      .then(function (data) {
-        res.json(data);
-      })
-      .catch(function (err) {
-        res.status(404).json(err);
-      });
-  });
-
-  app.delete("/api/players/:id", function (req, res) {
-    db.Player.destroy({
+  app.delete("/api/users/:email", function (req, res) {
+    db.User.destroy({
       where: {
-        id: req.params.id,
+        email: req.params.email,
       },
     })
       .then(function (data) {
@@ -48,8 +39,8 @@ module.exports = function (app) {
       });
   });
 
-  app.put("/api/players", function (req, res) {
-    db.Player.update(req.body, {
+  app.put("/api/users", function (req, res) {
+    db.User.update(req.body, {
       where: {
         id: req.body.id,
       },
