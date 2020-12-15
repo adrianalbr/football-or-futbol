@@ -5,8 +5,8 @@ $(document).ready(function () {
     const lastName = $("#lastName").val();
     const email = $("email").val();
 
-    const touchdown = $("#touchDown");
-    const goal = $("#goal");
+    const login = $("#login");
+    const signup = $("#signup");
 
     touchdown.on("submit", function () {
         postuser();
@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 
 
-     function postuser(){
+    function postuser(){
         $.ajax({
             method: "POST",
             URL:"/api/user",
