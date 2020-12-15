@@ -25,6 +25,10 @@ module.exports = function (sequelize, DataTypes) {
 
       },
     });
+
+  User.associate = function(models){
+    User.hasMany(models.Player)
+  }; 
     return User;
   };
   

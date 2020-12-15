@@ -5,20 +5,18 @@ $(document).ready(function () {
     const lastName = $("#lastName").val();
     const email = $("email").val();
 
-    const touchdown = $("#touchDown");
-    const goal = $("#goal");
+    const login = $("#login");
+    const signup = $("#signup");
 
-    touchdown.on("submit", function () {
+    login.on("submit", function () {
         postuser();
     });
     
-    goal.on("submit", function () {
+    signup.on("submit", function () {
         postuser();
     });
 
-
-
-     function postuser(){
+    function postuser(){
         $.ajax({
             method: "POST",
             URL:"/api/user",
