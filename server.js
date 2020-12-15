@@ -30,26 +30,14 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-// ROUTES
 
-// Views Routes
-app.get("/", (req, res) => {
-  res.render("login");
-});
 
-// app.use(playerController);
+// Requiring our routes
+require("./controllers/headController.js")(app);
+require("./controllers/playerController.js")(app);
+require("./controllers/userController.js")(app);
+require("./controllers/htmlRoutes.js")(app);
 
-// API Routes
-//test route
-app.get("/api/config", (req, res) => {
-  res.json({
-    success: true,
-  });
-});
-
-app.post("/api/test", (req, res) => {
-  console.log(req.body);
-});
 // db.sequelize.sync({ force: true }).then(() => {
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
