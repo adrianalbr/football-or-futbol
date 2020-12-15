@@ -2,12 +2,22 @@ module.exports = function (sequelize, DataTypes) {
   const Player = sequelize.define("Player", {
     firstName: {
       type: DataTypes.STRING,
+      allowNull: false,
+      validate : {
+        min: 2
+      }
     },
     lastName: {
       type: DataTypes.STRING,
+      allowNull: false,
+
     },
     acceleration: {
       type: DataTypes.INTEGER,
+      allowNull: false,
+      validate : {
+        isNumeric: true, 
+      }
     },
     speed: {
       type: DataTypes.INTEGER,
