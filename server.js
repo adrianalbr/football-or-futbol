@@ -34,7 +34,7 @@ app.set("view engine", "handlebars");
 
 // Views Routes
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("login");
 });
 
 // app.use(playerController);
