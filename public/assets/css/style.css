@@ -1,3 +1,21 @@
+
+/* global styles */
+html, body, main {
+  height: 100vh;
+}
+
+body {
+  overflow: hidden;
+  background-image: url("/assets/images/heinzfield.jpg");
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgb(171, 169, 169);
+  background-repeat: repeat;
+}
+
+
+/* login */
+
 .login-box {
   width: 280px;
   position: absolute;
