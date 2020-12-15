@@ -4,12 +4,15 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false,
         validate : {
-          min: 2
+          len: [2, 200]
         }
       },
       lastName: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate : {
+          len: [2, 200]
+        }
         
       },
       email: {
