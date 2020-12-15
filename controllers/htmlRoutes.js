@@ -9,10 +9,9 @@ module.exports = function (app) {
     res.render("headTohead");
   });
   app.get("/futbol", function (req, res) {
-    res.render("futbol");
+    res.render("login");
   });
   app.get("/football", function (req, res) {
-    res.render("footballgit status
-    ");
+    res.render("login");
   });
 };

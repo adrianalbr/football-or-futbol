@@ -11,6 +11,13 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    game: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isAlpha: true
+      },
+    },
     acceleration: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -78,6 +85,7 @@ module.exports = function (sequelize, DataTypes) {
     source: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: 'sportsCenter',
       validate: {
         isAlpha: true,
         len: [2, 200],
