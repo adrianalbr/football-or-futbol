@@ -49,11 +49,15 @@ function fetchPlayerDetails(reqId) {
   });
 }
 
-// let playerOneScore = 0;
-// let playerTwoScore = 0;
-// function compareAttributes(playerOneAttr, playerTwoAttr){
-
-// }
+let playerOneScore = 0;
+let playerTwoScore = 0;
+function compareAttributes(playerOneAttr, playerTwoAttr) {
+  if (playerOneAttr > playerTwoAttr) {
+    playerOneScore++;
+  } else if (playerOneAttr < playerTwoAttr) {
+    playerTwoScore++;
+  }
+}
 
 async function comparePlayers(req, res) {
   // get playerOne details
@@ -62,58 +66,16 @@ async function comparePlayers(req, res) {
   let playerOneDt = playerOneResult.dataValues;
   let playerTwoDt = playerTwoResult.dataValues;
   // console.log(playerOneDt, playerTwoDt);
-  
 
   //comparing the values of two players
-  let playerOneScore = 0;
-  let playerTwoScore = 0;
-  if (playerOneDt.acceleration > playerTwoDt.acceleration) {
-    playerOneScore++;
-  } else if (playerOneDt.acceleration < playerTwoDt.acceleration) {
-    playerTwoScore++;
-  }
-
-  if (playerOneDt.speed > playerTwoDt.speed) {
-    playerOneScore++;
-  } else if (playerOneDt.speed < playerTwoDt.speed) {
-    playerTwoScore++;
-  }
-
-  if (playerOneDt.strength > playerTwoDt.strength) {
-    playerOneScore++;
-  } else if (playerOneDt.strength < playerTwoDt.strength) {
-    playerTwoScore++;
-  }
-
-  if (playerOneDt.agility > playerTwoDt.agility) {
-    playerOneScore++;
-  } else if (playerOneDt.agility < playerTwoDt.agility) {
-    playerTwoScore++;
-  }
-
-  if (playerOneDt.kickPower > playerTwoDt.kickPower) {
-    playerOneScore++;
-  } else if (playerOneDt.kickPower < playerTwoDt.kickPower) {
-    playerTwoScore++;
-  }
-
-  if (playerOneDt.tackle > playerTwoDt.tackle) {
-    playerOneScore++;
-  } else if (playerOneDt.tackle < playerTwoDt.tackle) {
-    playerTwoScore++;
-  }
-
-  if (playerOneDt.jumping > playerTwoDt.jumping) {
-    playerOneScore++;
-  } else if (playerOneDt.jumping < playerTwoDt.jumping) {
-    playerTwoScore++;
-  }
-
-  if (playerOneDt.stamina > playerTwoDt.stamina) {
-    playerOneScore++;
-  } else if (playerOneDt.stamina < playerTwoDt.stamina) {
-    playerTwoScore++;
-  }
+  compareAttributes(playerOneDt.acceleration, playerTwoDt.acceleration);
+  compareAttributes(playerOneDt.speed, playerTwoDt.speed);
+  compareAttributes(playerOneDt.strength, playerTwoDt.strength);
+  compareAttributes(playerOneDt.agility, playerTwoDt.agility);
+  compareAttributes(playerOneDt.kickPower, playerTwoDt.kickPower);
+  compareAttributes(playerOneDt.tackle, playerTwoDt.tackle);
+  compareAttributes(playerOneDt.jumping, playerTwoDt.jumping);
+  compareAttributes(playerOneDt.stamina, playerTwoDt.stamina);
 
   // comparing final scores
   let result;
@@ -149,6 +111,5 @@ async function comparePlayers(req, res) {
       res.status(500).json(err);
     });
 }
-
 
 module.exports = routes;
