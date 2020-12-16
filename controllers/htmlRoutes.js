@@ -12,7 +12,9 @@ module.exports = function (app) {
     res.render("futbol");
   });
   app.get("/football", function (req, res) {
-    res.render("footballgit status
-    ");
+    res.render("football");
+  });
+  app.get("/winner", function (req, res) {
+    res.render("winner");
   });
 };
