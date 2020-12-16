@@ -9,9 +9,12 @@ module.exports = function (app) {
     res.render("headTohead");
   });
   app.get("/futbol", function (req, res) {
-    res.render("login");
+    res.render("futbol");
   });
   app.get("/football", function (req, res) {
-    res.render("login");
+    res.render("football");
+  });
+  app.get("/winner", function (req, res) {
+    res.render("winner");
   });
 };

@@ -93,10 +93,10 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
 
-  Player.associate = function (models) {
-    Player.belongsToMany(models.User, {
-      through: "",
-    });
-  };
+  // Player.associate = function (models) {
+  //   Player.belongsToMany(models.User, {
+  //     through: "",
+  //   });
+  // };
   return Player;
 };
