@@ -5,6 +5,7 @@ html, body, main {
 }
 
 body {
+  font-family: 'Josefin Sans', sans-serif;
   overflow: hidden;
   background-image: url("/assets/images/heinzfield.jpg");
   background-size: cover;
@@ -64,4 +65,14 @@ body {
   font-size: 18px;
   cursor: pointer;
   margin: 12px 0;
+}
+
+/* index */
+h1 {
+  width: 280px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
 }
