@@ -1,34 +1,22 @@
-//js page for login.handlebars
-
 $(document).ready(function () {
-    const firstName = $("#firstName").val();
-    const lastName = $("#lastName").val();
-    const email = $("email").val();
-
-    const login = $("#login");
-    const signup = $("#signup");
-
-    login.on("submit", function () {
-        postuser();
+    $("#new-user").on("submit", function (e) {
+      e.preventDefault();
+      const email = $("#email").val();
+      const firstName = $("#firstName").val();
+      const lastName = $("#lastName").val();
+      console.log(email);
+      console.log(firstName);
+      console.log(lastName);
+      $.ajax({
+        method: "POST",
+        url: "/api/users",
+        data: {
+          email,
+          firstName,
+          lastName,
+        },
+      }).then((response) => {
+        window.location.replace("/index");
+      });
     });
-    
-    signup.on("submit", function () {
-        postuser();
-    });
-
-    function postuser(){
-        $.ajax({
-            method: "POST",
-            URL:"/api/user",
-            data: {
-                firstName,
-                lastName,
-                email,
-            }
-        }).then((response) => {
-            window.location.replace("/index");
-
-        });
-    }  
-        
-})
+  });
