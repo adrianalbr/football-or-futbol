@@ -1,11 +1,12 @@
-
 /* global styles */
-html, body, main {
+html,
+body,
+main {
   height: 100vh;
 }
 
 body {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   overflow: hidden;
   background-image: url("/assets/images/heinzfield.jpg");
   background-size: cover;
@@ -13,7 +14,6 @@ body {
   background-color: rgb(171, 169, 169);
   background-repeat: repeat;
 }
-
 
 /* login */
 
@@ -75,4 +75,17 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+}
+
+/* INDEX STYLE */
+
+#indexWrap {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#buttonWrap {
+
 }
