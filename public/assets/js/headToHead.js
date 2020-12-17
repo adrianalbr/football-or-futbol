@@ -14,7 +14,6 @@ $(document).ready(function () {
       },
     }).then((result) => {
       console.log(result);
-      alert("here")
       window.location.replace(`/api/heads/${result.id}`);
     });
   });

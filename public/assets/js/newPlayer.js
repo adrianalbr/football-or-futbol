@@ -1,10 +1,11 @@
 $(document).ready(function () {
     console.log("My new player form will go here.");
     
-    $("#new-player").on("submit", function (e) {
+    $("#create").on("click", function (e) {
       e.preventDefault();
       const firstName = $("#firstName").val();
       const lastName = $("#lastName").val();
+      const game = $("#game").val();
       const acceleration = $("#acceleration").val();
       const speed = $("#speed").val();
       const strength = $("#strength").val();
@@ -33,9 +34,11 @@ $(document).ready(function () {
             tackle,
             jumping,
             stamina,
+            game
         },
       }).then((response) => {
-        window.location.replace("/players");
+        window.location.reload();
+        
       });
     });
   });
