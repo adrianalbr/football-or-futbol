@@ -1,15 +1,37 @@
-<div class="football">
-    <h2>Pick or create your own Football Player</h2>
-    <div class="textbox">
-        <input id="firstName" type="text" placeholder="First Name">
-    </div>
-    <div class="textbox">
-        <input id="lastName" type="text" placeholder="Last Name">
-    </div>
-    <div class="textbox">
-        <input id="email" type="email" placeholder="Email">
-    </div>
-    <input id="create" type="button" class="btn" value="Create Player">
-    <input id="Save" type="button" class="btn" value="Save Player">
-    <input id="" type="button" class="btn" value="Sign Up">
-</div>
+<h2>Pick or create your own Football Player</h2>
+
+<input type="hidden" id="game" value="football">
+
+<input id="firstName" type="text" placeholder="firstName">
+<input id="lastName" type="text" placeholder="lastName">
+
+<input id="acceleration" type="text" placeholder="acceleration">
+<input id="speed" type="text" placeholder="speed">
+<input id="strength" type="text" placeholder="strength">
+<input id="agility" type="text" placeholder="agility">
+<input id="kickPower" type="text" placeholder="kickPower">
+<input id="tackle" type="text" placeholder="tackle">
+<input id="jumping" type="text" placeholder="jumping">
+<input id="stamina" type="text" placeholder="stamina">
+
+<input id="create" type="button" class="btn" value="Create Player">
+<input id="home" type="button" class="btn" value="Go to home">
+<input id="vs-btn" type="button" class="btn" value="Go to Vs">
+
+
+
+{{!-- <ul>
+    {{#each footballPlayers}}
+    <li>
+        {{dataValues.firstName}}
+        {{dataValues.lastName}}
+
+    </li>
+
+    {{/each}}
+</ul> --}}
+<select id="footballPlayers">
+    {{#each footballPlayers}}
+    <option value={{dataValues.id}}> {{dataValues.firstName}} {{dataValues.lastName}}</option>
+    {{/each}}
+</select>
