@@ -8,11 +8,7 @@
     },
     "test": {
       "username": "root",
-<<<<<<< HEAD
       "password": "GTboot001",
-=======
-      "password": "mnmm",
->>>>>>> f2d04a92222d61d0868716acf6b2bca6ba9b18d2
       "database": "fball_db",
       "host": "127.0.0.1",
       "dialect": "mysql"
