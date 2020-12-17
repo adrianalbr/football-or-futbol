@@ -8,8 +8,9 @@ function routes(app) {
       },
     })
       .then(function (data) {
+        console.log(data.dataValues);
         res.render("winner",{
-          winner : data.dataValues.result
+          result : data.dataValues.result
         });
       })
       .catch(function (err) {
@@ -74,10 +75,10 @@ async function comparePlayers(req, res) {
   let winnerId;
   if (playerOneScore > playerTwoScore) {
     winnerId = playerOneDt.id;
-    result = `${playerOneDt.firstName} ${playerOneDt.lastName} - ${playerOneScore} beats ${playerTwoDt.firstName} ${playerTwoDt.lastName} - ${playerTwoScore} `;
+    result = `${playerOneDt.game}`
   } else if (playerOneScore < playerTwoScore) {
     winnerId = playerTwoDt.id;
-    result = `${playerTwoDt.firstName} ${playerTwoDt.lastName} - ${playerTwoScore} beats ${playerOneDt.firstName} ${playerOneDt.lastName} - ${playerOneScore} `;
+    result = `${playerTwoDt.game}`
   } else {
     result = `Its a tie`;
   }
