@@ -8,7 +8,10 @@ function routes(app) {
       },
     })
       .then(function (data) {
-        res.json(data);
+        console.log(data.dataValues);
+        res.render("winner",{
+          result : data.dataValues.result
+        });
       })
       .catch(function (err) {
         res.status(404).json(err);
@@ -25,7 +28,7 @@ function routes(app) {
       });
   });
 
-  app.post("/api/vs", function (req, res) {
+  app.post("/api/headToHead", function (req, res) {
     console.log(req.body);
     comparePlayers(req, res);
   });
@@ -72,10 +75,10 @@ async function comparePlayers(req, res) {
   let winnerId;
   if (playerOneScore > playerTwoScore) {
     winnerId = playerOneDt.id;
-    result = `${playerOneDt.firstName} ${playerOneDt.lastName} - ${playerOneScore} beats ${playerTwoDt.firstName} ${playerTwoDt.lastName} - ${playerTwoScore} `;
+    result = `${playerOneDt.game}`
   } else if (playerOneScore < playerTwoScore) {
     winnerId = playerTwoDt.id;
-    result = `${playerTwoDt.firstName} ${playerTwoDt.lastName} - ${playerTwoScore} beats ${playerOneDt.firstName} ${playerOneDt.lastName} - ${playerOneScore} `;
+    result = `${playerTwoDt.game}`
   } else {
     result = `Its a tie`;
   }
@@ -89,12 +92,14 @@ async function comparePlayers(req, res) {
     winnerId: winnerId,
   })
     .then(function (data) {
+      console.log(data);
       res.json({
-        result: result,
-        userId: req.body.userId,
-        playerOneId: req.body.playerOneId,
-        playerTwoId: req.body.playerTwoId,
-        winnerId: winnerId,
+        id : data.dataValues.id
+        // result: result,
+        // userId: req.body.userId,
+        // playerOneId: req.body.playerOneId,
+        // playerTwoId: req.body.playerTwoId,
+        // winnerId: winnerId,
       });
     })
     .catch(function (err) {

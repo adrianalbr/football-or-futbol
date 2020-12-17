@@ -6,15 +6,16 @@ $(document).ready(function () {
     let userIdFromScr = $("#userid").val();
     $.ajax({
       type: "POST",
-      url: "/api/vs",
+      url: "/api/headToHead",
       data: {
         playerOneId: playerOneIdFromScr,
         playerTwoId: playerTwoIdFromScr,
         userId: userIdFromScr,
       },
-    }).then((response) => {
-      console.log(response);
-    //   window.location.replace("/winner");
+    }).then((result) => {
+      console.log(result);
+      alert("here")
+      window.location.replace(`/api/heads/${result.id}`);
     });
   });
 });
