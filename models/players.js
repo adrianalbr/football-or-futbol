@@ -23,7 +23,8 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       validate: {
         isNumeric: true,
-        len: [1, 99],
+        max: 99,
+        min : 1
       },
     },
     speed: {
@@ -31,7 +32,8 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       validate: {
         isNumeric: true,
-        len: [1, 99],
+        max: 99,
+        min : 1
       },
     },
     strength: {
@@ -39,7 +41,8 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       validate: {
         isNumeric: true,
-        len: [1, 99],
+        max: 99,
+        min : 1
       },
     },
     agility: {
@@ -47,7 +50,8 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       validate: {
         isNumeric: true,
-        len: [1, 99],
+        max: 99,
+        min : 1
       },
     },
     kickPower: {
@@ -55,7 +59,8 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       validate: {
         isNumeric: true,
-        len: [1, 99],
+        max: 99,
+        min : 1
       },
     },
     tackle: {
@@ -63,7 +68,8 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       validate: {
         isNumeric: true,
-        len: [1, 99],
+        max: 99,
+        min : 1
       },
     },
     jumping: {
@@ -71,7 +77,8 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       validate: {
         isNumeric: true,
-        len: [1, 99],
+        max: 99,
+        min : 1
       },
     },
     stamina: {
@@ -79,7 +86,8 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       validate: {
         isNumeric: true,
-        len: [1, 99],
+        max: 99,
+        min : 1
       },
     },
     source: {
