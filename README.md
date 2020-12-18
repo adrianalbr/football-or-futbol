@@ -6,7 +6,7 @@
 
 Welcome to Football or Futbol, the application that will help you to decide once and for all who is the better athlete, a Football player or a Futbol player.
 
-This application allows the user to select or create a Football and a Futbol player to compare them based on the following attributes:
+This application allows the user to select or create a Football and a Futbol player and compare them based on the following attributes:
 
     - Acceleration
     - Speed
@@ -17,13 +17,19 @@ This application allows the user to select or create a Football and a Futbol pla
     - Jumping
     - Stamina
 
+## Inspiration
+
+To prove Futbol’s superiority. After all the rest of the world can’t be wrong!
+
 ## How it works
 
-The user signs up or logs in and they are presented with a choice - Football or Futbol. Then the user is directed to a page where they can select a player from one of the sports or they can create a player. Once this is done the user can select or create a player from the other sport.
+The user signs up or logs in and they are presented with a choice - Football or Futbol. Then the user is directed to a page where they can select a player or create a player. Once this is done the user can select or create a player from the other sport.
 Once both players are selected they battle!
-Stats for both players are compared and a winner is declared.
+Stats from both players are compared and a winner is declared.
 
 Users can also create their own players, maybe even create themselves to see how they measure up against PRO athletes.
+
+The application includes a database with 200 PRO players that the user can compare.
 
 ## Tools used
 
@@ -45,6 +51,11 @@ This application was developed using this wonderful technology:
 ## How to install
 
 Futbol or Football can be found here - 
+
+## Other useful links
+
+Presentation - https://docs.google.com/presentation/d/1e-Tn37O0iDVCBre28mQBgSArVxMNkwn5rDT81fks-CY/edit#slide=id.ga93273cbd8_0_9
+
 
 
 
