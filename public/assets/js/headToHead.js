@@ -6,9 +6,11 @@ $(document).ready(function () {
 
     if (playerOneIdFromScr === "") {
       alert("Please select futbol player");
+      return;
     }
     if (playerTwoIdFromScr === "") {
       alert("Please select football player");
+      return;
     }
 
     $.ajax({
