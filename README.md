@@ -46,6 +46,11 @@ This application was developed using this wonderful technology:
 
 Futbol or Football can be found here - 
 
+## Other useful links
+
+Presentation - https://docs.google.com/presentation/d/1e-Tn37O0iDVCBre28mQBgSArVxMNkwn5rDT81fks-CY/edit#slide=id.ga93273cbd8_0_9
+
+
 
 
 
