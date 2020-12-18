@@ -30,8 +30,6 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-
-
 // Requiring our routes
 require("./controllers/headController.js")(app);
 require("./controllers/playerController.js")(app);

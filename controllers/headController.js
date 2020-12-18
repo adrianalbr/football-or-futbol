@@ -9,7 +9,6 @@ function routes(app) {
     })
       .then(function (data) {
         console.log(data.dataValues);
-
         res.render("winner",{
           result : data.dataValues.result,
           winnerGame : data.dataValues.winnerGame
@@ -100,7 +99,6 @@ async function comparePlayers(req, res) {
       console.log(data);
       res.json({
         id : data.dataValues.id
-
       });
     })
     .catch(function (err) {
