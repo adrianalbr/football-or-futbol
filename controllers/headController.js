@@ -90,7 +90,6 @@ async function comparePlayers(req, res) {
   // insert the result into the table
   db.Head.create({
     result: result,
-    userId: req.body.userId,
     playerOneId: req.body.playerOneId,
     playerTwoId: req.body.playerTwoId,
     winnerId: winnerId,
