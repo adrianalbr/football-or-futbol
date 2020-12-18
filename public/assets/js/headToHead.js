@@ -1,13 +1,15 @@
 $(document).ready(function () {
-
-console.log("footballPlayerId" + localStorage.getItem("footballPlayerId"));
-console.log("futbolPlayerId" + localStorage.getItem("futbolPlayerId"));
-
-
   $("#vs").on("click", function (event) {
     event.preventDefault();
-    let playerOneIdFromScr = localStorage.getItem("footballPlayerId");
-    let playerTwoIdFromScr = localStorage.getItem("futbolPlayerId");
+    let playerOneIdFromScr = $("#htohFutbolPlayers").val();
+    let playerTwoIdFromScr = $("#htohFootballPlayers").val();
+
+    if (playerOneIdFromScr === "") {
+      alert("Please select futbol player");
+    }
+    if (playerTwoIdFromScr === "") {
+      alert("Please select football player");
+    }
 
     $.ajax({
       type: "POST",
@@ -15,7 +17,6 @@ console.log("futbolPlayerId" + localStorage.getItem("futbolPlayerId"));
       data: {
         playerOneId: playerOneIdFromScr,
         playerTwoId: playerTwoIdFromScr,
-
       },
     }).then((result) => {
       console.log(result);

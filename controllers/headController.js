@@ -9,9 +9,9 @@ function routes(app) {
     })
       .then(function (data) {
         console.log(data.dataValues);
-        res.render("winner",{
-          result : data.dataValues.result,
-          winnerGame : data.dataValues.winnerGame
+        res.render("winner", {
+          result: data.dataValues.result,
+          winnerGame: data.dataValues.winnerGame,
         });
       })
       .catch(function (err) {
@@ -33,7 +33,37 @@ function routes(app) {
     console.log(req.body);
     comparePlayers(req, res);
   });
+
+  app.get("/headTohead",function (req, res) {
+    // let footballPlayers = await fetchPlayers("football");
+    // let futbolPlayers = await fetchPlayers("futbol");
+    db.Player.findAll({
+      where: {
+        game: "futbol",
+      },
+    })
+      .then(function (futbolData) {
+        db.Player.findAll({
+          where: {
+            game: "football",
+          },
+        })
+          .then(function (footBallData) {
+            res.render("headTohead", {
+              futbolPlayers: futbolData,
+              footballPlayers: footBallData,
+            });
+          })
+          .catch(function (err) {
+            res.status(404).json(err);
+          });
+      })
+      .catch(function (err) {
+        res.status(404).json(err);
+      });
+  });
 }
+
 
 function fetchPlayerDetails(reqId) {
   return db.Player.findOne({
@@ -81,7 +111,7 @@ async function comparePlayers(req, res) {
     result = `${playerOneDt.firstName} ${playerOneDt.lastName} beats ${playerTwoDt.firstName} ${playerTwoDt.lastName}`;
   } else if (playerOneScore < playerTwoScore) {
     winnerId = playerTwoDt.id;
-    winnerGame = `${playerTwoDt.game}`
+    winnerGame = `${playerTwoDt.game}`;
     result = `${playerTwoDt.firstName} ${playerTwoDt.lastName} beats ${playerOneDt.firstName} ${playerOneDt.lastName}`;
   } else {
     result = `Its a tie`;
@@ -93,12 +123,12 @@ async function comparePlayers(req, res) {
     playerOneId: req.body.playerOneId,
     playerTwoId: req.body.playerTwoId,
     winnerId: winnerId,
-    winnerGame : winnerGame
+    winnerGame: winnerGame,
   })
     .then(function (data) {
       console.log(data);
       res.json({
-        id : data.dataValues.id
+        id: data.dataValues.id,
       });
     })
     .catch(function (err) {
