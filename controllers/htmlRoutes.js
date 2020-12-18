@@ -17,7 +17,6 @@ module.exports = function (app) {
   app.get("/headTohead", function (req, res) {
     res.render("headTohead");
   });
-
   app.get("/winner", function (req, res) {
     res.render("winner");
   });
