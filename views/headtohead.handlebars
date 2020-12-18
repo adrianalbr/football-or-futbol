@@ -1,5 +1,20 @@
 <div class="headToHead">
-    <h2>Player-one Vs Player-two</h2>
+    <h2>Match Players</h2>
+
+
+    <select id="htohFutbolPlayers">
+        <option value=""> Select Futbol Player</option>
+        {{#each futbolPlayers}}
+        <option value={{dataValues.id}}> {{dataValues.firstName}} {{dataValues.lastName}}</option>
+        {{/each}}
+    </select>
+
+    <select id="htohFootballPlayers">
+        <option value=""> Select Football Player</option>
+        {{#each footballPlayers}}
+        <option value={{dataValues.id}}> {{dataValues.firstName}} {{dataValues.lastName}}</option>
+        {{/each}}
+    </select>
 
 
     <input id="vs" type="button" class="btn" value="VS">
