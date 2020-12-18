@@ -1,36 +1,30 @@
-<h2>Pick or create your own Futbol Player</h2>
+<div id="FutbolWrap"></div>
+    <h2>Pick or create your own Futball Player</h2>
 
-<input type="hidden" id="game" value="futbol">
+    <input type="hidden" id="game" value="futbol">
 
-<input id="firstName" type="text" placeholder="firstName">
-<input id="lastName" type="text" placeholder="lastName">
+    <input id="firstName" type="text" placeholder="firstName">
+    <input id="lastName" type="text" placeholder="lastName">
 
-<input id="acceleration" type="text" placeholder="acceleration">
-<input id="speed" type="text" placeholder="speed">
-<input id="strength" type="text" placeholder="strength">
-<input id="agility" type="text" placeholder="agility">
-<input id="kickPower" type="text" placeholder="kickPower">
-<input id="tackle" type="text" placeholder="tackle">
-<input id="jumping" type="text" placeholder="jumping">
-<input id="stamina" type="text" placeholder="stamina">
+    <input id="acceleration" type="text" placeholder="acceleration">
+    <input id="speed" type="text" placeholder="speed">
+    <input id="strength" type="text" placeholder="strength">
+    <input id="agility" type="text" placeholder="agility">
+    <input id="kickPower" type="text" placeholder="kickPower">
+    <input id="tackle" type="text" placeholder="tackle">
+    <input id="jumping" type="text" placeholder="jumping">
+    <input id="stamina" type="text" placeholder="stamina">
 
-<input id="create" type="button" class="btn" value="Create Player">
-<input id="home" type="button" class="btn" value="Go to home">
-<input id="vs-btn" type="button" class="btn" value="Go to Vs">
-<ul>
-    {{!-- {{#each futbolPlayers}}
-    <li>
-        {{dataValues.firstName}}
-        {{dataValues.lastName}}
-    </li>
-
-    {{/each}} --}}
 
     <select id="futbolPlayers">
-         <option value=""> Select Futbol Player</option>
-    {{#each futbolPlayers}}
-    <option value={{dataValues.id}}> {{dataValues.firstName}} {{dataValues.lastName}}</option>
-    {{/each}}
-</select>
-</ul>
-
+        <option value=""> Select Futbol Player</option>
+        {{#each futbolPlayers}}
+        <option value={{dataValues.id}}> {{dataValues.firstName}} {{dataValues.lastName}}</option>
+        {{/each}}
+    </select>
+    <div id="buttonPlayerWrap">
+        <input id="create" type="button" class="btn" value="Create Player">
+        <input id="home" type="button" class="btn" value="Go to home">
+        <input id="vs-btn" type="button" class="btn" value="Go to Vs">
+    </div>
+</div>
