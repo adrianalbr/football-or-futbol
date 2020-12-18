@@ -27,7 +27,6 @@ module.exports = function (sequelize, DataTypes) {
     winnerId: {
       type: DataTypes.INTEGER,
     },
-
     winnerGame: {
       type: DataTypes.STRING
       
