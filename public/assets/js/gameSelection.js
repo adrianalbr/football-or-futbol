@@ -12,7 +12,7 @@ $(document).ready(function () {
     window.location.replace("/index");
   });
 
-  $("#footBallPlayers").change(function () {
+  $("#futbolPlayers").change(function () {
     // alert($("#footBallPlayers").val());
     localStorage.setItem("futbolPlayerId", $("#futbolPlayers").val());
   });
