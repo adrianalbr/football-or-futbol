@@ -141,3 +141,14 @@ input{
   cursor: pointer;
   margin: 5px;
 }
+
+#players{
+  width: 150px;
+  height: 40px;
+  padding-top: 10px;
+}
+
+#update-delete-player{
+  padding-top: 30px;
+}
+
