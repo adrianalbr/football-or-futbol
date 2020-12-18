@@ -4,9 +4,7 @@ $(document).ready(function () {
       const email = $("#email").val();
       const firstName = $("#firstName").val();
       const lastName = $("#lastName").val();
-      console.log(email);
-      console.log(firstName);
-      console.log(lastName);
+
       $.ajax({
         method: "POST",
         url: "/api/users",
@@ -15,8 +13,12 @@ $(document).ready(function () {
           firstName,
           lastName,
         },
-      }).then((response) => {
-        window.location.replace("/index");
-      });
+        success : function(response){
+          window.location.replace("/index");
+        },
+        error : function(err){
+          alert(err.responseJSON.errors[0].message);
+        }
+      })
     });
   });
