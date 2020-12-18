@@ -1,14 +1,6 @@
 <div class="headToHead">
     <h2>Match Players</h2>
 
-
-    <select id="htohFutbolPlayers">
-        <option value=""> Select Futbol Player</option>
-        {{#each futbolPlayers}}
-        <option value={{dataValues.id}}> {{dataValues.firstName}} {{dataValues.lastName}}</option>
-        {{/each}}
-    </select>
-
     <select id="htohFootballPlayers">
         <option value=""> Select Football Player</option>
         {{#each footballPlayers}}
@@ -16,7 +8,13 @@
         {{/each}}
     </select>
 
-
-    <button id="vs" type="button" class="btn" value="VS">Vs</button>
+    <button id="vs" type="button" class="btn" value="VS">Vs</button> 
+    
+    <select id="htohFutbolPlayers">
+        <option value=""> Select Futbol Player</option>
+        {{#each futbolPlayers}}
+        <option value={{dataValues.id}}> {{dataValues.firstName}} {{dataValues.lastName}}</option>
+        {{/each}}
+    </select>
 </div>
 <script type="text/javascript" src="/assets/js/headToHead.js"></script>
