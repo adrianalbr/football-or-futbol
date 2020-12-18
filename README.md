@@ -19,10 +19,9 @@ This application allows the user to select or create a Football and a Futbol pla
 
 ## How it works
 
-The user logs in
-The user selects the first player
-Selects the second player
-and then we battle!! Stats for both players are compared and a winner is declared
+The user signs up or logs in and they are presented with a choice - Football or Futbol. Then the user is directed to a page where they can select a player from one of the sports or they can create a player. Once this is done the user can select or create a player from the other sport.
+Once both players are selected they battle!
+Stats for both players are compared and a winner is declared.
 
 Users can also create their own players, maybe even create themselves to see how they measure up against PRO athletes.
 
@@ -43,38 +42,10 @@ This application was developed using this wonderful technology:
 * Must protect API keys in Node with environment variables
 
 
-## Presentation Requirements
+## How to install
 
-Use this [project presentation template](https://docs.google.com/presentation/d/1_u8TKy5zW5UlrVQVnyDEZ0unGI2tjQPDEpA0FNuBKAw/edit?usp=sharing) to address the following: 
-
-* Elevator pitch: a one minute description of your application
-
-* Concept: What is your user story? What was your motivation for development?
-
-* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
-
-* Demo: Show your stuff!
-
-* Directions for Future Development
-
-* Links to to the deployed application and the GitHub repository. Use this guide for [deploying your application to Heroku](../04-Important/GitHubHerokuConnect.md) if you need a reminder on how to deploy!
+Futbol or Football can be found here - 
 
 
-## Grading Metrics 
-
-| Metric        | Weight | 
-| ---           | ---    |
-| Concept       | 10%    |
-| Design        | 20%    |
-| Functionality | 30%    |
-| Collaboration | 30%    |
-| Presentation  | 10%    |
 
 
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository

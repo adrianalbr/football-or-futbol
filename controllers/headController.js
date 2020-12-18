@@ -10,7 +10,8 @@ function routes(app) {
       .then(function (data) {
         console.log(data.dataValues);
         res.render("winner",{
-          result : data.dataValues.result
+          result : data.dataValues.result,
+          winnerGame : data.dataValues.winnerGame
         });
       })
       .catch(function (err) {
@@ -73,12 +74,15 @@ async function comparePlayers(req, res) {
   // comparing final scores
   let result;
   let winnerId;
+  let winnerGame;
   if (playerOneScore > playerTwoScore) {
     winnerId = playerOneDt.id;
-    result = `${playerOneDt.game}`
+    winnerGame = `${playerOneDt.game}`;
+    result = `${playerOneDt.firstName} ${playerOneDt.lastName} beats ${playerTwoDt.firstName} ${playerTwoDt.lastName}`;
   } else if (playerOneScore < playerTwoScore) {
     winnerId = playerTwoDt.id;
-    result = `${playerTwoDt.game}`
+    winnerGame = `${playerTwoDt.game}`
+    result = `${playerTwoDt.firstName} ${playerTwoDt.lastName} beats ${playerOneDt.firstName} ${playerOneDt.lastName}`;
   } else {
     result = `Its a tie`;
   }
@@ -86,20 +90,15 @@ async function comparePlayers(req, res) {
   // insert the result into the table
   db.Head.create({
     result: result,
-    userId: req.body.userId,
     playerOneId: req.body.playerOneId,
     playerTwoId: req.body.playerTwoId,
     winnerId: winnerId,
+    winnerGame : winnerGame
   })
     .then(function (data) {
       console.log(data);
       res.json({
         id : data.dataValues.id
-        // result: result,
-        // userId: req.body.userId,
-        // playerOneId: req.body.playerOneId,
-        // playerTwoId: req.body.playerTwoId,
-        // winnerId: winnerId,
       });
     })
     .catch(function (err) {

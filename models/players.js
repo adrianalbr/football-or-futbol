@@ -92,7 +92,7 @@ module.exports = function (sequelize, DataTypes) {
       },
     },
   });
-
+  
   // Player.associate = function (models) {
   //   Player.hasOne(models.User);
   // };

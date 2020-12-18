@@ -22,13 +22,12 @@ module.exports = function (sequelize, DataTypes) {
         validate: {
             isEmail: true
           }
-
       },
     });
 
-  User.associate = function(models){
-    User.hasMany(models.Player)
-  }; 
+  // User.associate = function(models){
+  //   User.hasMany(models.Player)
+  // }; 
     return User;
   };
   
