@@ -52,7 +52,7 @@ function routes(app) {
         })
           .then(function (footBallData) {
             console.log("footBallData " + footBallData);
-            res.render("headTohead", {
+            res.render("headtohead", {
               futbolPlayers: futbolData,
               footballPlayers: footBallData,
             });
