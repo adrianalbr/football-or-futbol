@@ -9,10 +9,36 @@ function routes(app) {
     })
       .then(function (data) {
         console.log(data.dataValues);
-        res.render("winner", {
-          result: data.dataValues.result,
-          winnerGame: data.dataValues.winnerGame,
-        });
+        let playerOneId = data.dataValues.playerOneId;
+        let playerTwoId = data.dataValues.playerTwoId;
+        let result = data.dataValues.result;
+        //Get first player's stats
+        db.Player.findOne({
+          where: {
+            id: playerOneId,
+          },
+        })
+          .then(function (firstPlayerData) {
+            //Get 2nd Player stats
+            db.Player.findOne({
+              where: {
+                id: playerTwoId,
+              },
+            })
+              .then(function (secondPlayerData) {
+                res.render("winner", {
+                  result: result,
+                  firstPlayerStats: firstPlayerData.dataValues,
+                  secondPlayerStats: secondPlayerData.dataValues,
+                });
+              })
+              .catch(function (err) {
+                res.status(404).json(err);
+              });
+          })
+          .catch(function (err) {
+            res.status(404).json(err);
+          });
       })
       .catch(function (err) {
         res.status(404).json(err);
@@ -34,7 +60,7 @@ function routes(app) {
     comparePlayers(req, res);
   });
 
-  app.get("/headTohead",function (req, res) {
+  app.get("/headTohead", function (req, res) {
     // let footballPlayers = await fetchPlayers("football");
     // let futbolPlayers = await fetchPlayers("futbol");
     console.log("in head to head");
@@ -68,7 +94,6 @@ function routes(app) {
       });
   });
 }
-
 
 function fetchPlayerDetails(reqId) {
   return db.Player.findOne({
