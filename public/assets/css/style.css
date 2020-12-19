@@ -209,3 +209,10 @@ input{
   color:#530902;
   font-size: x-large;
 }
+#home {
+  width: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
