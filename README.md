@@ -59,7 +59,7 @@ This application was developed using these wonderful technologies:
     - MySQL database
     - Sequelize
     - Heroku
-    - new technology??
+    - Eslint
 
 ## Contribution
 
