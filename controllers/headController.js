@@ -37,28 +37,33 @@ function routes(app) {
   app.get("/headTohead",function (req, res) {
     // let footballPlayers = await fetchPlayers("football");
     // let futbolPlayers = await fetchPlayers("futbol");
+    console.log("in head to head");
     db.Player.findAll({
       where: {
         game: "futbol",
       },
     })
       .then(function (futbolData) {
+        console.log("futbol data " + futbolData);
         db.Player.findAll({
           where: {
             game: "football",
           },
         })
           .then(function (footBallData) {
+            console.log("footBallData " + footBallData);
             res.render("headTohead", {
               futbolPlayers: futbolData,
               footballPlayers: footBallData,
             });
           })
           .catch(function (err) {
+            console.log("error occurred while getting football data" + err);
             res.status(404).json(err);
           });
       })
       .catch(function (err) {
+        console.log("error occurred while getting futball data" + err);
         res.status(404).json(err);
       });
   });
