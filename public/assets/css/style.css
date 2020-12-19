@@ -178,7 +178,7 @@ input{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: #eeeeee;
 }
 
 #stats {
@@ -201,18 +201,18 @@ input{
 
 .winner-h1 {
   padding-top: 500px;
-  color:#530902;
+  color:#eeeeee;
   width: auto;
 }
 .col-head {
   text-align: center;
-  color:#530902;
+  color:#eeeeee;
   font-size: x-large;
 }
 #home {
   width: 280px;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
