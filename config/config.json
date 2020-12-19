@@ -1,9 +1,9 @@
 {
     "development": {
-      "username": "root",
-      "password": "<3MimiKyu",
-      "database": "fball_db",
-      "host": "127.0.0.1",
+      "username": "hs3a39ropinjb8rz",
+      "password": "gf9isujbg27l2hnu",
+      "database": "n89w85bcirsk2646",
+      "host": "l0ebsc9jituxzmts.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
       "dialect": "mysql"
     },
     "test": {
@@ -14,7 +14,10 @@
       "dialect": "mysql"
     },
     "production": {
-      "use_env_variable": "JAWSDB_URL",
+      "username": "hs3a39ropinjb8rz",
+      "password": "gf9isujbg27l2hnu",
+      "database": "n89w85bcirsk2646",
+      "host": "l0ebsc9jituxzmts.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
       "dialect": "mysql"
     }
   }
